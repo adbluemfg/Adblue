@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#06101d">
+<title>NSD ASSOCIATES — DEF Manufacturing Technology</title>
+<meta name="description" content="NSD ASSOCIATES — premium DEF / AdBlue manufacturing machinery, plant engineering, automation and technical consultancy.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#04101d; --navy2:#071b2d; --blue:#0797ff; --cyan:#55e7ff;
+  --ink:#081525; --muted:#6d7d8f; --white:#f8fbff; --line:rgba(255,255,255,.12);
+  --light:#f4f9fd; --max:1280px; --ease:cubic-bezier(.16,1,.3,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,sans-serif;background:var(--navy);color:var(--white);overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.035;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E")}
+a{text-decoration:none;color:inherit}.wrap{width:min(92%,var(--max));margin:auto}
+.cursor{position:fixed;width:18px;height:18px;border:1px solid rgba(85,231,255,.8);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .2s,height .2s,background .2s;mix-blend-mode:screen}
+.cursor-dot{position:fixed;width:4px;height:4px;border-radius:50%;background:var(--cyan);pointer-events:none;z-index:9999;transform:translate(-50%,-50%)}
+#progress{position:fixed;top:0;left:0;height:2px;width:0;background:linear-gradient(90deg,var(--cyan),var(--blue));z-index:10001;box-shadow:0 0 15px var(--cyan)}
+nav{position:fixed;top:0;left:0;width:100%;z-index:1000;padding:20px 0;transition:.5s var(--ease)}
+nav.scrolled{background:rgba(3,12,22,.78);backdrop-filter:blur(22px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:10px;font-family:"Space Grotesk";font-weight:700;letter-spacing:-.7px}
+.logo-mark{width:34px;height:34px;border:1px solid rgba(85,231,255,.65);border-radius:10px;display:grid;place-items:center;color:var(--cyan);box-shadow:0 0 22px rgba(7,151,255,.18)}
+.logo-mark:before{content:"◇";font-size:20px}
+.logo small{display:block;font-size:8px;letter-spacing:2px;color:#8ca3b8;font-weight:500;margin-top:2px}
+.links{display:flex;gap:30px;color:#bfd0df;font-size:12px}.links a{position:relative}.links a:after{content:"";position:absolute;left:0;bottom:-9px;width:0;height:1px;background:var(--cyan);transition:.35s}.links a:hover:after,.links a.active:after{width:100%}
+.nav-btn,.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 19px;border-radius:999px;font-size:11px;font-weight:700;letter-spacing:.3px;transition:.4s var(--ease);cursor:pointer;border:0}
+.nav-btn,.btn.primary{color:#03101c;background:#f5fbff;box-shadow:0 10px 35px rgba(255,255,255,.08)}
+.nav-btn:hover,.btn.primary:hover{transform:translateY(-3px);box-shadow:0 16px 45px rgba(7,151,255,.22)}
+.btn.ghost{border:1px solid rgba(85,231,255,.35);color:white;background:rgba(255,255,255,.035);backdrop-filter:blur(10px)}
+.btn.ghost:hover{border-color:var(--cyan);background:rgba(85,231,255,.08);transform:translateY(-3px)}
+.menu{display:none;border:1px solid var(--line);background:none;color:white;padding:9px;border-radius:8px}
+.hero{min-height:100svh;position:relative;display:flex;align-items:center;overflow:hidden;background:#020b15}
+.hero-bg{position:absolute;inset:0;background-image:linear-gradient(90deg,rgba(2,10,18,.97) 0%,rgba(2,10,18,.82) 38%,rgba(2,10,18,.22) 73%,rgba(2,10,18,.45) 100%),url("hero-visual.png");background-size:cover;background-position:center right;filter:saturate(1.05)}
+.hero:after{content:"";position:absolute;inset:auto 0 0;height:30%;background:linear-gradient(transparent,var(--navy))}
+.scan{position:absolute;inset:0;background:linear-gradient(transparent 49.8%,rgba(85,231,255,.06) 50%,transparent 50.2%);background-size:100% 8px;opacity:.2;pointer-events:none}
+.grid{position:absolute;inset:0;background-image:linear-gradient(rgba(85,231,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(85,231,255,.05) 1px,transparent 1px);background-size:80px 80px;mask-image:linear-gradient(to bottom,black,transparent 80%)}
+.hero-content{position:relative;z-index:4;padding-top:100px;max-width:850px}
+.kicker{font-size:10px;letter-spacing:3.5px;color:var(--cyan);font-weight:700;margin-bottom:24px;display:flex;align-items:center;gap:11px}.kicker i{width:34px;height:1px;background:var(--cyan);box-shadow:0 0 12px var(--cyan)}
+h1,h2,h3{font-family:"Space Grotesk",sans-serif}
+h1{font-size:clamp(52px,8vw,106px);line-height:.89;letter-spacing:-5px;max-width:930px}
+.grad{background:linear-gradient(100deg,#fff 15%,#8deaff 53%,#168cff);-webkit-background-clip:text;color:transparent}
+.hero-copy{max-width:680px;color:#aab9c8;line-height:1.8;margin-top:27px;font-size:15px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.hero-meta{display:flex;gap:26px;flex-wrap:wrap;margin-top:46px;color:#a4b6c7;font-size:10px}.hero-meta span{display:flex;gap:8px;align-items:center}.hero-meta b{color:var(--cyan);font-size:15px}
+.scroll{position:absolute;z-index:5;bottom:35px;right:4%;font-size:9px;letter-spacing:2px;color:#8296aa;writing-mode:vertical-rl;display:flex;gap:10px;align-items:center}.scroll:before{content:"";height:45px;width:1px;background:linear-gradient(var(--cyan),transparent)}
+.waterline{position:absolute;z-index:4;bottom:0;left:-10%;width:120%;height:90px;opacity:.65;background:radial-gradient(ellipse at center,rgba(85,231,255,.45),transparent 55%);filter:blur(16px);animation:water 6s ease-in-out infinite}
+@keyframes water{50%{transform:translateX(3%) scaleY(1.25)}}
+section{position:relative;padding:125px 0}.dark{background:var(--navy)}.light{background:var(--light);color:var(--ink)}
+.eyebrow{font-size:10px;letter-spacing:3px;color:var(--blue);font-weight:800;margin-bottom:17px}
+.title{font-size:clamp(40px,5.5vw,72px);line-height:.96;letter-spacing:-3.5px}.copy{max-width:670px;color:var(--muted);line-height:1.8;margin-top:20px;font-size:14px}
+.metrics{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#061421}
+.metrics-grid{display:grid;grid-template-columns:repeat(4,1fr)}.metric{padding:32px 25px;border-right:1px solid var(--line)}.metric:last-child{border:0}.metric strong{font-family:"Space Grotesk";font-size:38px}.metric p{font-size:10px;color:#7e93a6;margin-top:7px;text-transform:uppercase;letter-spacing:1px}
+.process-head{display:flex;justify-content:space-between;gap:40px;align-items:end}.process-track{margin-top:65px;display:grid;grid-template-columns:repeat(6,1fr);gap:12px}.pstep{position:relative;min-height:170px;padding:24px;border:1px solid rgba(8,37,60,.11);background:white;border-radius:20px;overflow:hidden;transition:.5s var(--ease)}.pstep:hover{transform:translateY(-8px);box-shadow:0 20px 45px rgba(6,32,55,.1)}.pstep .num{font-size:9px;color:#86a0b5;letter-spacing:2px}.pstep .icon{width:48px;height:48px;border-radius:50%;margin:24px 0 17px;background:#e8f6ff;color:var(--blue);display:grid;place-items:center;font-size:21px;box-shadow:inset 0 0 0 1px rgba(7,151,255,.08)}.pstep h3{font-size:15px}.pstep p{font-size:10px;color:#77899a;line-height:1.6;margin-top:6px}
+.machine-section{background:linear-gradient(180deg,#06121f,#03101c)}.machine-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:75px;align-items:center}.machine-stage{height:610px;border-radius:34px;border:1px solid var(--line);background:radial-gradient(circle at 50% 45%,rgba(7,151,255,.2),transparent 28%),#06111d;position:relative;overflow:hidden;display:grid;place-items:center;box-shadow:inset 0 0 80px rgba(7,151,255,.04)}
+.stage-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(85,231,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(85,231,255,.06) 1px,transparent 1px);background-size:45px 45px;transform:perspective(500px) rotateX(55deg) scale(1.6) translateY(32%);transform-origin:center bottom;opacity:.45}
+.reactor{width:230px;height:330px;border:2px solid #a7b5c0;border-radius:60px 60px 30px 30px;position:relative;background:linear-gradient(90deg,rgba(255,255,255,.04),rgba(255,255,255,.15),rgba(255,255,255,.03));box-shadow:inset 0 0 35px rgba(255,255,255,.07),0 0 70px rgba(7,151,255,.12);z-index:2;transform:rotateX(2deg);transition:transform .2s}
+.reactor:before{content:"";position:absolute;width:78px;height:45px;left:74px;top:-47px;border:2px solid #a7b5c0;border-bottom:0;border-radius:14px 14px 0 0}.reactor:after{content:"DEF";position:absolute;left:0;right:0;top:50%;text-align:center;font-family:"Space Grotesk";font-size:28px;letter-spacing:3px;color:#75dfff}
+.liquid{position:absolute;left:4px;right:4px;bottom:4px;height:54%;border-radius:0 0 25px 25px;background:linear-gradient(#66e6ff,#087cf5);opacity:.65;overflow:hidden}.liquid:before{content:"";position:absolute;top:-5px;left:-20%;width:140%;height:18px;background:rgba(255,255,255,.5);border-radius:50%;animation:wave 3s ease-in-out infinite}@keyframes wave{50%{transform:translateX(6%) scaleY(.7)}}
+.pulse{position:absolute;width:310px;height:310px;border:1px solid rgba(85,231,255,.3);border-radius:50%;animation:pulse 3.5s infinite}.pulse:nth-child(2){width:420px;height:420px;animation-delay:1.2s}.pulse:nth-child(3){width:540px;height:540px;animation-delay:2.2s}@keyframes pulse{0%{transform:scale(.8);opacity:0}25%{opacity:.8}100%{transform:scale(1.1);opacity:0}}
+.machine-points{position:absolute;inset:0;z-index:5}.point{position:absolute;display:flex;align-items:center;gap:7px;font-size:9px;color:#b9d1e3}.point i{width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 13px var(--cyan)}.point.p1{top:23%;left:10%}.point.p2{top:35%;right:8%}.point.p3{bottom:23%;left:9%}.point.p4{bottom:16%;right:10%}
+.machine-copy h2{font-size:clamp(42px,5vw,68px);letter-spacing:-3px;line-height:.96}.machine-copy .copy{color:#8fa2b4}.checks{list-style:none;margin-top:30px;display:grid;grid-template-columns:1fr 1fr;gap:0 25px}.checks li{padding:15px 0;border-top:1px solid var(--line);font-size:11px;color:#c7d3de}.checks li:before{content:"✓";color:var(--cyan);margin-right:9px}.machine-btn{margin-top:28px}
+.builder{background:linear-gradient(135deg,#f6fbff,#eaf6ff);color:var(--ink)}.builder-wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px;align-items:center}.builder-card{background:rgba(255,255,255,.85);border:1px solid rgba(9,52,81,.12);border-radius:28px;padding:28px;box-shadow:0 30px 80px rgba(5,39,66,.1)}.field{margin-bottom:19px}.field label{display:flex;justify-content:space-between;font-size:9px;text-transform:uppercase;letter-spacing:1.5px;color:#72869a;font-weight:800}.field label span{color:var(--blue)}select{width:100%;margin-top:8px;padding:14px 15px;border:1px solid #d7e5ef;background:#f9fcff;color:#173047;border-radius:11px;outline:none;font:inherit;font-size:12px}.result{margin-top:22px;padding:20px;border-radius:18px;background:#06182a;color:white}.result small{color:#80a3be;font-size:9px;letter-spacing:1.4px}.result strong{display:block;font-family:"Space Grotesk";font-size:24px;margin-top:7px}.result p{font-size:10px;color:#93a9bc;margin-top:5px}.result .btn{margin-top:15px}
+.why{background:#061321}.why-grid{margin-top:60px;display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.why-card{padding:35px 22px;border-right:1px solid var(--line);min-height:260px}.why-card:last-child{border:0}.why-card b{font-size:10px;color:var(--cyan)}.why-card h3{margin-top:50px;font-size:20px}.why-card p{color:#8196a9;font-size:11px;line-height:1.7;margin-top:12px}
+.projects{background:#f7fbfe;color:var(--ink)}.project-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:18px;margin-top:55px}.project{min-height:380px;border-radius:24px;overflow:hidden;position:relative;background:#0b2236}.project.big{background:linear-gradient(180deg,transparent 20%,rgba(2,14,25,.95)),url("hero-visual.png") center/cover}.project.small{min-height:181px;background:linear-gradient(180deg,transparent,rgba(2,14,25,.9)),radial-gradient(circle at 60% 40%,#159be0,#061322)}.project-stack{display:grid;gap:18px}.project-content{position:absolute;left:28px;right:28px;bottom:25px;color:white}.project-content small{color:#7ceaff;letter-spacing:2px;font-size:9px}.project-content h3{font-size:26px;margin-top:8px}.project-content p{font-size:10px;color:#b9c9d6;margin-top:7px}.project .tag{position:absolute;top:20px;right:20px;padding:8px 11px;border:1px solid rgba(255,255,255,.18);border-radius:99px;background:rgba(0,0,0,.25);backdrop-filter:blur(8px);font-size:8px;color:white}
+.cta{padding:145px 0;text-align:center;background:radial-gradient(circle at 50% 20%,rgba(7,151,255,.22),transparent 42%),#030d17;overflow:hidden}.cta h2{font-size:clamp(50px,8vw,100px);line-height:.9;letter-spacing:-5px}.cta p{max-width:600px;margin:23px auto;color:#8298aa;line-height:1.8;font-size:13px}.cta .hero-actions{justify-content:center}
+footer{background:#020a12;border-top:1px solid var(--line);padding:60px 0 25px}.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px}.footer p{font-size:11px;color:#687e91;line-height:1.7;margin-top:16px;max-width:320px}.footer h4{font-size:9px;letter-spacing:2px;margin-bottom:18px}.footer-links{display:grid;gap:11px;font-size:10px;color:#71879a}.footer-links a:hover{color:white}.copyline{margin-top:50px;border-top:1px solid var(--line);padding-top:20px;display:flex;justify-content:space-between;color:#506474;font-size:9px}
+.reveal{opacity:0;transform:translateY(35px);transition:1s var(--ease)}.reveal.show{opacity:1;transform:none}
+.tilt{transform-style:preserve-3d}
+@media(max-width:950px){
+ .links{display:none}.menu{display:block}.nav-btn{display:none}
+ .metrics-grid{grid-template-columns:1fr 1fr}.metric:nth-child(2){border-right:0}
+ .process-track{grid-template-columns:repeat(3,1fr)}
+ .machine-grid,.builder-wrap,.project-grid{grid-template-columns:1fr}
+ .machine-stage{height:500px}.why-grid{grid-template-columns:1fr 1fr}.why-card:nth-child(even){border-right:0}
+ .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+ .cursor,.cursor-dot{display:none}section{padding:85px 0}.hero{min-height:820px}.hero-bg{background-position:62% center}
+ h1{letter-spacing:-3px}.hero-copy{font-size:13px}.hero-meta{margin-top:32px;gap:16px}
+ .metrics-grid{grid-template-columns:1fr 1fr}.metric{padding:24px 15px}.metric strong{font-size:29px}
+ .process-head{display:block}.process-track{grid-template-columns:1fr 1fr}.pstep{min-height:150px;padding:18px}.pstep .icon{margin:17px 0 12px}
+ .machine-stage{height:410px}.reactor{width:150px;height:230px}.reactor:before{left:46px;width:56px}.reactor:after{font-size:21px}.pulse:nth-child(3){width:390px;height:390px}
+ .checks{grid-template-columns:1fr}.builder-card{padding:20px}.why-grid{grid-template-columns:1fr}.why-card{border-right:0;border-bottom:1px solid var(--line)}
+ .project.big{min-height:330px}.footer-grid{grid-template-columns:1fr 1fr}.copyline{display:block;line-height:1.8}
+}
+</style>
+</head>
+<body>
+<div id="progress"></div><div class="cursor"></div><div class="cursor-dot"></div>
+
+<nav id="nav">
+  <div class="wrap nav">
+    <a href="#home" class="logo"><span class="logo-mark"></span><span>NSD<br><small>ASSOCIATES</small></span></a>
+    <div class="links">
+      <a href="#technology">Technology</a><a href="#machinery">Machinery</a><a href="#solutions">Solutions</a><a href="#projects">Projects</a><a href="#builder">Build Your Plant</a><a href="#contact">Contact</a>
+    </div>
+    <a class="nav-btn" href="#contact">GET A QUOTE <span>↗</span></a>
+    <button class="menu" aria-label="Open menu">☰</button>
+  </div>
+</nav>
+
+<header class="hero" id="home">
+  <div class="hero-bg"></div><div class="grid"></div><div class="scan"></div>
+  <div class="wrap hero-content reveal">
+    <div class="kicker"><i></i> DEF MANUFACTURING TECHNOLOGY & CONSULTANCY</div>
+    <h1>Complete Solutions for <span class="grad">AdBlue / DEF Manufacturing.</span></h1>
+    <p class="hero-copy">Advanced machinery, plant engineering, automation and expert consultancy — engineered around your production goals, from concept to commissioning.</p>
+    <div class="hero-actions">
+      <a class="btn primary" href="#technology">EXPLORE OUR SOLUTIONS →</a>
+      <a class="btn ghost" href="#machinery">◉ EXPLORE MACHINERY</a>
+    </div>
+    <div class="hero-meta">
+      <span><b>⌁</b> Machinery Supply</span><span><b>⌂</b> Plant Engineering</span><span><b>◈</b> Automation & Control</span><span><b>◎</b> Technical Consultancy</span>
+    </div>
+  </div>
+  <div class="scroll">SCROLL TO EXPLORE</div><div class="waterline"></div>
+</header>
+
+<section class="metrics">
+  <div class="wrap metrics-grid">
+    <div class="metric reveal"><strong>DEF</strong><p>Specialized Technology</p></div>
+    <div class="metric reveal"><strong>32.5%</strong><p>Standard Urea Concentration</p></div>
+    <div class="metric reveal"><strong>24/7</strong><p>Industrial Production Design</p></div>
+    <div class="metric reveal"><strong>∞</strong><p>Scalable Plant Architecture</p></div>
+  </div>
+</section>
+
+<section class="light" id="technology">
+  <div class="wrap">
+    <div class="process-head">
+      <div><div class="eyebrow reveal">01 / OUR TECHNOLOGY</div><h2 class="title reveal">The complete DEF production process.</h2></div>
+      <p class="copy reveal">Every stage is engineered for process consistency, quality and efficient operation — creating a connected manufacturing ecosystem.</p>
+    </div>
+    <div class="process-track">
+      <article class="pstep reveal"><span class="num">01</span><div class="icon">◉</div><h3>Water Purification</h3><p>High-purity water treatment architecture.</p></article>
+      <article class="pstep reveal"><span class="num">02</span><div class="icon">◇</div><h3>Urea Dissolution</h3><p>Controlled raw-material integration.</p></article>
+      <article class="pstep reveal"><span class="num">03</span><div class="icon">⌁</div><h3>Mixing & Blending</h3><p>Precision process control.</p></article>
+      <article class="pstep reveal"><span class="num">04</span><div class="icon">▱</div><h3>Filtration</h3><p>Integrated finishing and protection.</p></article>
+      <article class="pstep reveal"><span class="num">05</span><div class="icon">▥</div><h3>Storage</h3><p>Safe transfer and storage systems.</p></article>
+      <article class="pstep reveal"><span class="num">06</span><div class="icon">▣</div><h3>Filling & Dispensing</h3><p>Flexible packaging solutions.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="machine-section" id="machinery">
+  <div class="wrap machine-grid">
+    <div class="machine-stage tilt reveal" id="stage">
+      <div class="stage-grid"></div><div class="pulse"></div><div class="pulse"></div><div class="pulse"></div>
+      <div class="reactor"><div class="liquid"></div></div>
+      <div class="machine-points">
+        <span class="point p1"><i></i> PRECISION MIXING</span>
+        <span class="point p2"><i></i> PROCESS CONTROL</span>
+        <span class="point p3"><i></i> FILTRATION</span>
+        <span class="point p4"><i></i> TRANSFER SYSTEM</span>
+      </div>
+    </div>
+    <div class="machine-copy">
+      <div class="eyebrow reveal">02 / OUR MACHINERY</div>
+      <h2 class="reveal">High-performance systems for reliable production.</h2>
+      <p class="copy reveal">Purpose-engineered systems designed around DEF manufacturing requirements — from individual machines to complete production lines.</p>
+      <ul class="checks reveal">
+        <li>DEF Mixing & Blending Systems</li><li>Automatic Filling Machines</li>
+        <li>Water Purification & EDI Systems</li><li>IBC & Barrel Filling Systems</li>
+        <li>Filtration Systems</li><li>DEF Dispensing Systems</li>
+        <li>Storage & Transfer Systems</li><li>PLC & Process Automation</li>
+      </ul>
+      <a class="btn ghost machine-btn reveal" href="#contact">REQUEST MACHINERY DETAILS →</a>
+    </div>
+  </div>
+</section>
+
+<section class="builder" id="builder">
+  <div class="wrap builder-wrap">
+    <div>
+      <div class="eyebrow reveal">03 / PLANT BUILDER</div>
+      <h2 class="title reveal">Build your DEF plant.</h2>
+      <p class="copy reveal">Select your production capacity, automation level and packaging type. Generate a preliminary system direction in seconds.</p>
+      <div class="hero-actions reveal"><a class="btn primary" href="#contact">GET DETAILED PROPOSAL →</a></div>
+    </div>
+    <div class="builder-card reveal">
+      <div class="field"><label>Production Capacity <span>01</span></label>
+        <select id="capacity"><option>5,000 L/day</option><option selected>10,000 L/day</option><option>15,000 L/day</option><option>25,000 L/day</option><option>50,000+ L/day</option></select></div>
+      <div class="field"><label>Automation Level <span>02</span></label>
+        <select id="automation"><option>Semi Automatic</option><option selected>Automatic</option><option>Advanced Automatic</option></select></div>
+      <div class="field"><label>Packaging Type <span>03</span></label>
+        <select id="packaging"><option>Can / Bucket</option><option>Barrel</option><option>IBC</option><option>Bulk / Tanker</option><option>Multi-format</option></select></div>
+      <div class="result"><small>YOUR RECOMMENDED SYSTEM</small><strong id="resultTitle">10,000 L/day</strong><p id="resultText">Automatic · Can / Bucket</p><a class="btn primary" href="#contact">REQUEST ENGINEERING PROPOSAL →</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="why" id="solutions">
+  <div class="wrap">
+    <div class="eyebrow reveal">04 / WHY NSD</div><h2 class="title reveal">More than a supplier.<br>We are your engineering partner.</h2>
+    <div class="why-grid">
+      <article class="why-card reveal"><b>01</b><h3>Specialized DEF Expertise</h3><p>Focused technology and process knowledge for DEF / AdBlue manufacturing.</p></article>
+      <article class="why-card reveal"><b>02</b><h3>Engineering Support</h3><p>Solutions built around actual plant capacity, workflow and operating requirements.</p></article>
+      <article class="why-card reveal"><b>03</b><h3>Scalable Solutions</h3><p>Plant architectures that can evolve as your production business grows.</p></article>
+      <article class="why-card reveal"><b>04</b><h3>Advanced Automation</h3><p>Modern process monitoring, control and automation possibilities.</p></article>
+      <article class="why-card reveal"><b>05</b><h3>Technical Support</h3><p>Engineering guidance beyond machine supply — from setup to optimization.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="projects" id="projects">
+  <div class="wrap">
+    <div class="eyebrow reveal">05 / PROJECTS & CAPABILITIES</div>
+    <h2 class="title reveal">Built around real production.</h2>
+    <p class="copy reveal">Present your plant capabilities, installations and engineering case studies through a visual project portfolio.</p>
+    <div class="project-grid">
+      <article class="project big reveal"><span class="tag">DEF PLANT SYSTEM</span><div class="project-content"><small>COMPLETE SOLUTION</small><h3>From engineering to production.</h3><p>Integrated process, machinery and automation architecture.</p></div></article>
+      <div class="project-stack">
+        <article class="project small reveal"><span class="tag">MACHINERY</span><div class="project-content"><small>HIGH PERFORMANCE</small><h3>Precision systems.</h3></div></article>
+        <article class="project small reveal"><span class="tag">CONSULTANCY</span><div class="project-content"><small>TECHNICAL PARTNER</small><h3>Engineering that scales.</h3></div></article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <div class="wrap">
+    <div class="eyebrow reveal">06 / START YOUR PROJECT</div>
+    <h2 class="reveal">Let's build your<br><span class="grad">DEF future.</span></h2>
+    <p class="reveal">Tell us your production capacity, location, packaging requirements and automation goals. NSD ASSOCIATES can help define the right technical direction.</p>
+    <div class="hero-actions reveal">
+      <a class="btn primary" href="mailto:adbluemfg@gmail.com?subject=Enquiry%20for%20Turnkey%20DEF%20Plant">EMAIL OUR ENGINEERS ↗</a>
+      <a class="btn ghost" href="https://wa.me/919847795860?text=Hello%2C%20I%20am%20interested%20in%20setting%20up%20a%20Turnkey%20AdBlue%2FDEF%20plant." target="_blank" rel="noopener">WHATSAPP US ↗</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div><div class="logo"><span class="logo-mark"></span><span>NSD<br><small>ASSOCIATES</small></span></div><p>DEF Manufacturing Technology, Machinery, Automation & Engineering Consultancy.</p></div>
+      <div><h4>SOLUTIONS</h4><div class="footer-links"><a href="#technology">DEF Manufacturing</a><a href="#machinery">Machinery</a><a href="#solutions">Automation</a><a href="#contact">Consultancy</a></div></div>
+      <div><h4>TECHNOLOGY</h4><div class="footer-links"><a href="#technology">Water Systems</a><a href="#technology">Mixing Systems</a><a href="#technology">Filtration</a><a href="#machinery">Filling Systems</a></div></div>
+      <div><h4>COMPANY</h4><div class="footer-links"><a href="#home">Home</a><a href="#projects">Projects</a><a href="#builder">Build Your Plant</a><a href="#contact">Contact</a></div></div>
+    </div>
+    <div class="copyline"><span>© 2026 NSD ASSOCIATES. All rights reserved.</span><span>ENGINEERED FOR THE FUTURE.</span></div>
+  </div>
+</footer>
+
+<script>
+const $ = s => document.querySelector(s);
+const $$ = s => [...document.querySelectorAll(s)];
+
+const nav = $('#nav'), progress = $('#progress');
+window.addEventListener('scroll',()=>{
+  nav.classList.toggle('scrolled',scrollY>30);
+  const h=document.documentElement.scrollHeight-innerHeight;
+  progress.style.width=(h>0 ? scrollY/h*100 : 0)+'%';
+});
+
+const io = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')});
+},{threshold:.12});
+$$('.reveal').forEach(el=>io.observe(el));
+
+/* Active navigation */
+const sections=$$('header[id],section[id]');
+const navLinks=$$('.links a');
+const navIO=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      navLinks.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id));
+    }
+  });
+},{rootMargin:'-35% 0px -55% 0px'});
+sections.forEach(s=>navIO.observe(s));
+
+/* Mobile menu */
+$('.menu').addEventListener('click',()=>{
+  const links=$('.links');
+  if(getComputedStyle(links).display==='none'){
+    links.style.display='flex'; links.style.position='absolute'; links.style.top='72px'; links.style.left='4%';
+    links.style.right='4%'; links.style.padding='22px'; links.style.border='1px solid var(--line)';
+    links.style.borderRadius='18px'; links.style.background='rgba(3,12,22,.96)'; links.style.backdropFilter='blur(20px)';
+    links.style.flexDirection='column'; links.style.gap='20px';
+  }else links.removeAttribute('style');
+});
+
+/* Plant builder */
+function updatePlant(){
+  $('#resultTitle').textContent=$('#capacity').value;
+  $('#resultText').textContent=$('#automation').value+' · '+$('#packaging').value;
+}
+['capacity','automation','packaging'].forEach(id=>$('#'+id).addEventListener('change',updatePlant));
+
+/* Premium 3D tilt */
+const stage=$('#stage');
+stage.addEventListener('mousemove',e=>{
+  const r=stage.getBoundingClientRect(), x=(e.clientX-r.left)/r.width-.5, y=(e.clientY-r.top)/r.height-.5;
+  stage.querySelector('.reactor').style.transform=`perspective(900px) rotateY(${x*12}deg) rotateX(${-y*8}deg)`;
+});
+stage.addEventListener('mouseleave',()=>stage.querySelector('.reactor').style.transform='rotateX(2deg)');
+
+/* Cursor */
+const cursor=$('.cursor'), dot=$('.cursor-dot');
+window.addEventListener('mousemove',e=>{
+  cursor.style.left=e.clientX+'px';cursor.style.top=e.clientY+'px';
+  dot.style.left=e.clientX+'px';dot.style.top=e.clientY+'px';
+});
+$$('a,button,.pstep,.builder-card').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{cursor.style.width='35px';cursor.style.height='35px';cursor.style.background='rgba(85,231,255,.06)'});
+  el.addEventListener('mouseleave',()=>{cursor.style.width='18px';cursor.style.height='18px';cursor.style.background='transparent'});
+});
+
+/* Subtle hero parallax */
+window.addEventListener('scroll',()=>{
+  const heroBg=$('.hero-bg');
+  if(scrollY<innerHeight) heroBg.style.transform=`translateY(${scrollY*.12}px) scale(1.02)`;
+});
+
+/* Smooth anchor close on mobile */
+$$('a[href^="#"]').forEach(a=>a.addEventListener('click',()=>{
+  if(innerWidth<951) $('.links').removeAttribute('style');
+}));
+</script>
+</body>
+</html>
